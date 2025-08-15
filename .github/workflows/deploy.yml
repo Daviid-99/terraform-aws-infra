@@ -40,14 +40,11 @@ jobs:
         with:
           terraform_version: 1.6.0
       
-      - name: ⚡ Terraform Init
+      - name: Terraform Init
         run: terraform init
-
-      - name: 📋 Terraform Plan
-        run: terraform plan -out plan.tfplan
-
-      - name: 🚀 Terraform Apply
-        run: terraform apply -auto-approve plan.tfplan
-
-
-
+      
+      - name: Terraform Plan
+        run: terraform plan
+      
+      - name: Terraform Apply
+        run: terraform apply -auto-approve
