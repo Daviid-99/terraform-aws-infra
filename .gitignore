@@ -1,0 +1,6 @@
+# Ignore sensitive files
+*.pem
+*.tfstate
+*.tfstate.backup
+.terraform/
+.aws/
