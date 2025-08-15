@@ -1,6 +1,20 @@
-# Ignore sensitive files
+# Ignore Terraform state & backups
+*.tfstate
+*.tfstate.backup
+*.terraform/
+*.swp
+
+# Ignore AWS credentials
+.aws/
 *.pem
+
+# Ignore Terraform state files
 *.tfstate
 *.tfstate.backup
 .terraform/
-.aws/
+.terraform.lock.hcl
+
+# Ignore local editor configs
+*.swp
+.vscode/
+*.log
