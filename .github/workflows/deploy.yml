@@ -35,13 +35,19 @@ jobs:
           docker build -f Dockerfile -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
-      - name: 🚀 Terraform Init
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.6.0
+      
+      - name: Terraform Init
         run: terraform init
-
-      - name: 📋 Terraform Plan
+      
+      - name: Terraform Plan
         run: terraform plan
-
-      - name: ⚡ Terraform Apply
+      
+      - name: Terraform Apply
         run: terraform apply -auto-approve
+
 
 
