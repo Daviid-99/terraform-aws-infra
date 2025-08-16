@@ -41,10 +41,10 @@ jobs:
           terraform_version: 1.6.0
       
       - name: Terraform Init
-        run: terraform init
+        run: terraform init -input=false
       
       - name: Terraform Plan
-        run: terraform plan
+        run: terraform plan -out=tfplan -input=false
       
       - name: Terraform Apply
-        run: terraform apply -auto-approve
+        run: terraform apply -input=false -auto-approve tfplan
